@@ -47,7 +47,7 @@ const HeroSection = ({ posts, autoSlideInterval = 5000 }) => {
               {post.title}
             </h1>
             <p className="mt-4 text-gray-200">{post.description}</p>
-            <button className="px-4 py-2 mt-6 bg-white text-gray-900 rounded-lg">
+            <button className="px-4 py-2 mt-6 bg-primary text-white rounded-lg">
               Read More
             </button>
           </div>

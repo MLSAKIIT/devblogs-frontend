@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import RecentPosts from "../components/RecentPosts";
 
@@ -71,12 +72,14 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* Hero Section with multiple posts */}
       <HeroSection posts={heroPosts} />
 
       {/* Recent Blog Posts */}
       <RecentPosts posts={blogPosts} />
+
+      <Footer />
     </div>
   );
 };

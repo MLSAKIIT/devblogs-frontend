@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-secondary text-white py-12">
       <div className="container mx-auto text-center">
         <h2 className="text-xl font-bold mb-4">
           Let’s get started on something great
@@ -10,7 +10,7 @@ const Footer = () => {
         <p className="mb-8">
           Join 4,000+ startups already growing with Untitled.
         </p>
-        <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg">
+        <button className="px-4 py-2 bg-primary text-white rounded-lg">
           Start Free
         </button>
 

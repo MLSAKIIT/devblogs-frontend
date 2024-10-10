@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const BlogForm = ({ onCreateBlog }) => {
   const [title, setTitle] = useState("");
@@ -26,8 +26,10 @@ const BlogForm = ({ onCreateBlog }) => {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-center">Create New Blog</h2>
+    <div className="max-w-lg mx-auto bg-secondary p-6 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-6 text-white text-center">
+        Create New Blog
+      </h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="title" className="block text-gray-700">
