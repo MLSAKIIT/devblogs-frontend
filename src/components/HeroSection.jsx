@@ -28,8 +28,8 @@ const HeroSection = ({ posts, autoSlideInterval = 5000 }) => {
   const post = posts[currentIndex];
 
   return (
-    <div className="px-10">
-      <section className="relative bg-gray-900 text-white rounded-3xl overflow-hidden transition-all duration-500 ease-in-out">
+    <div className="pt-20">
+      <section className="relative bg-gray-900 text-white overflow-hidden transition-all duration-500 ease-in-out">
         {/* Background Image */}
         <img
           src={post.img}
@@ -38,29 +38,29 @@ const HeroSection = ({ posts, autoSlideInterval = 5000 }) => {
         />
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 flex items-center md:pl-16 px-3 transition-all duration-500">
-          <div className="text-center md:text-left max-w-lg">
+        <div className="absolute inset-0 flex items-center md:pl-24 px-3 transition-all duration-500">
+          <div className="text-center mx-auto md:mx-0 md:text-left max-w-lg">
             <span className="text-sm font-medium uppercase text-gray-300">
               Featured
             </span>
-            <h1 className="text-4xl font-bold leading-tight mt-2">
+            <h1 className="text-2xl sm:text-4xl font-bold leading-tight mt-2 w-4/5 md:w-full mx-auto">
               {post.title}
             </h1>
-            <p className="mt-4 text-gray-200">{post.description}</p>
-            <button className="px-4 py-2 mt-6 bg-primary text-white rounded-lg">
+            <p className="mt-5 sm:mt-4 text-gray-200 w-[90%] mx-auto md:w-full">{post.description}</p>
+            <button className="px-4 py-2 mt-6 bg-primary text-white rounded-lg duration-200 hover:opacity-90">
               Read More
             </button>
           </div>
 
           {/* Arrow Buttons */}
-          <div className="absolute md:left-2 left-0 top-1/2 transform -translate-y-1/2">
+          <div className="absolute left-0 md:left-4  top-1/2 transform -translate-y-1/2">
             <button
               onClick={handlePrevPost}
               className="bg-white text-black p-3 rounded-full"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-4 w-4 sm:h-6 sm:w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -74,14 +74,14 @@ const HeroSection = ({ posts, autoSlideInterval = 5000 }) => {
               </svg>
             </button>
           </div>
-          <div className="absolute md:right-2 right-0 top-1/2 transform -translate-y-1/2">
+          <div className="absolute  right-0 md:right-4 top-1/2 transform -translate-y-1/2">
             <button
               onClick={handleNextPost}
               className="bg-white text-black p-3 rounded-full"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-4 w-4 sm:h-6 sm:w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
