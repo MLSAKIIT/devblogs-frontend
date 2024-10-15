@@ -1,8 +1,8 @@
-// import React from "react";
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-white py-12">
+    <footer className="bg-lightFooter text-black py-12 dark:bg-darkFooter dark:text-white">
       <div className="container mx-auto text-center">
         <h2 className="text-xl font-bold mb-4">
           Let’s get started on something great
