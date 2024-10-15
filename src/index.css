@@ -17,3 +17,12 @@
     color: var(--text-color);           /* Apply the text color */
   }
   
+.bg-dark-2{
+  /* background-color: rgb(31 42 55); */
+  background: inherit;
+}
+.border-dark-2{
+  /* border-color: rgba(31, 42, 55, 0.5) */
+  border-color: rgba(255, 255, 255, 0.4);
+  /* border-color: #151515; */
+}
