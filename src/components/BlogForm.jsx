@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const BlogForm = ({ onCreateBlog }) => {
   const [title, setTitle] = useState("");
@@ -86,6 +88,11 @@ const BlogForm = ({ onCreateBlog }) => {
             placeholder="Enter image URL"
             required
           />
+          <ReactQuill theme="snow" className="block text-gray-700"
+          value={description}
+          onChange={setDescription}
+          placeholder="enter your description..."
+          ></ReactQuill>
         </div>
         <button
           type="submit"
