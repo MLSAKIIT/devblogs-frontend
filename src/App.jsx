@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </>
   );
 }
