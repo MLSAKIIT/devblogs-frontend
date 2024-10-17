@@ -1,4 +1,3 @@
-import React from "react";
 import Facebook from "./svgs/Facebook";
 import SocialX from "./svgs/SocialX";
 import Github from "./svgs/Github";
@@ -50,8 +49,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="col-span-12 md:col-span-3">
-          <h6
-            className="mb-2 flex justify-center font-semibold uppercase md:justify-start">
+          <h6 className="mb-2 flex justify-center font-semibold uppercase md:justify-start">
             Contact
           </h6>
           <p className="mb-2 flex items-center justify-center md:justify-start">
@@ -80,11 +78,12 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div class="flex justify-between items-center px-4 py-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2024 <a href="/">Devblog™</a>. All Rights Reserved.
+      <div className="flex justify-between items-center px-4 py-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          © 2024 <a href="/">Devblog™</a>. All Rights Reserved.
         </span>
         <div className="flex sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-        <a
+          <a
             href="/"
             type="button"
             className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
@@ -101,7 +100,7 @@ const Footer = () => {
             data-twe-ripple-init
           >
             <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
-                <SocialX className="fill-primary" />
+              <SocialX className="fill-primary" />
             </span>
           </a>
           <a
@@ -118,9 +117,9 @@ const Footer = () => {
             href="/"
             type="button"
             className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
-            data-twe-ripple-init>
-            <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5"
+            data-twe-ripple-init
           >
+            <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
               <Github className="fill-primary" />
             </span>
           </a>

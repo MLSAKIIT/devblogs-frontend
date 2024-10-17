@@ -24,7 +24,6 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <NavBar />
       <RouterProvider router={router} />
     </>
   );
