@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import CreateBlogs from "./pages/CreateBlogs";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login"; // Import Login
+import Register from "./pages/Register"; //Import Register
 import Layout from "./Layout"; // Import the layout component
 
 const router = createBrowserRouter([
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/create", element: <CreateBlogs /> },
       { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
     ],
   },
   {
