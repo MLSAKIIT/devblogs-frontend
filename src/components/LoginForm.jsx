@@ -1,14 +1,31 @@
-import { useState } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { object, string } from "yup";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const schema = object({
+    email: string()
+      .email("must be a valid email")
+      .required("email is required"),
+    password: string()
+      .matches(
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
+        "enter valid password"
+      )
+      .required("password is required"),
+  });
 
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
 
-  const handleLogin = () => {
+  const handleLogin = (data) => {
     //auth logic here.
+    // console.log(data);
   };
 
   return (
@@ -17,27 +34,36 @@ const LoginForm = () => {
       <p className="font-medium text-lg text-gray-500 mt-4">
         Please enter your Details
       </p>
-      <div className="mt-8 ">
-        <div>
+      <form className="mt-8 " onSubmit={handleSubmit(handleLogin)}>
+        <div className="mb-4">
           <label className="text-lg font-medium">Email</label>
           <input
-            value={email}
-            className="w-full border-2 border-gray-100 roundex-xl p-4 bg-transparent rounded-sm"
+            {...register("email")}
+            className="w-full border-2 border-gray-100 roundex-xl p-4 my-4 bg-transparent rounded-sm"
             type="email"
-            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
           />
+          {errors.email && (
+            <span className="text-red-500 mx-4 text-sm">
+              {errors.email.message}
+            </span>
+          )}
         </div>
-        <div>
+        <div className="mb-4">
           <label className="text-lg font-medium">Password</label>
           <input
-            value={password}
-            className="w-full border-2 border-gray-100 roundex-xl p-4 bg-transparent rounded-sm"
+            {...register("password")}
+            className="w-full border-2 border-gray-100 roundex-xl p-4 my-4 bg-transparent rounded-sm"
             type="password"
-            onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
           />
+          {errors.password && (
+            <span className="text-red-500 mx-4 text-sm">
+              {errors.password.message}
+            </span>
+          )}
         </div>
+
         <div>
           <button className="font-medium text-base text-primary hover:opacity-75 transition-opacity duration-300">
             Forgot password
@@ -45,7 +71,7 @@ const LoginForm = () => {
         </div>
         <div className="mt-8 flex flex-col gap-y-4">
           <button
-            onClick={handleLogin}
+            type="submit"
             className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01]  ease-in-out transform py-4 bg-primary rounded-xl text-white font-bold text-lg hover:opacity-75 transition-opacity duration-300"
           >
             Sign in
@@ -60,7 +86,7 @@ const LoginForm = () => {
             Register
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
