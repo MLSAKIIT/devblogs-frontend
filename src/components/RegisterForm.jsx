@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 const RegisterForm = () => {
-  // Define the validation schema using Yup
+  // Defining the validation schema using Yup
   const schema = Yup.object().shape({
     userName: Yup.string().required("Username is required").min(3, "Username must be at least 3 characters"),
     email: Yup.string().email("Must be a valid email").required("Email is required"),
@@ -27,9 +27,8 @@ const RegisterForm = () => {
     resolver: yupResolver(schema),
   });
 
-  // Registration logic (to be implemented)
   const handleRegister = (data) => {
-    console.log(data); // Replace with actual registration logic
+    //auth logic here.
   };
 
   return (
