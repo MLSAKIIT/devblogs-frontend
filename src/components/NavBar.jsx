@@ -1,39 +1,21 @@
+
 import React, { useEffect, useState } from "react";
+
+import { useContext } from "react";
+import { ThemeContext } from "../App";
+
 import { useNavigate } from "react-router-dom";
 import Sun from "./svgs/Sun";
 import Moon from "./svgs/Moon";
 
 const NavBar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate(); // Initialize useNavigate
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
-    }
-  };
 
   return (
     <nav
       className={`fixed z-50 w-full flex justify-between items-center px-4 sm:px-12 h-20 py-4 ${
-        isDarkMode ? "bg-secondary text-white" : "bg-white text-black"
+        theme == "dark" ? "bg-secondary text-white" : "bg-white text-black"
       }`}
     >
       <img
@@ -46,13 +28,15 @@ const NavBar = () => {
       <div className="flex">
         {/* Dark Mode Toggle Button */}
         <button
-          onClick={toggleDarkMode}
+          onClick={toggleTheme}
           aria-label="theme toggler"
           className={`flex h-10 w-11 mr-3 sm:mr-5 items-center justify-center rounded-lg border duration-300 hover:bg-stroke sm:flex ${
-            !isDarkMode ? "border-stroke bg-white" : "bg-dark-2 border-dark-2"
+            theme == "light"
+              ? "border-stroke bg-white"
+              : "bg-dark-2 border-dark-2"
           }`}
         >
-          {isDarkMode ? (
+          {theme == "dark" ? (
             <Sun className="fill-white" />
           ) : (
             <Moon className="fill-primary" />
