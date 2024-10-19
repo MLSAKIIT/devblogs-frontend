@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useEffect } from "react";
 import Home from "./pages/Home";
 import CreateBlogs from "./pages/CreateBlogs";
 import PageNotFound from "./pages/PageNotFound";
@@ -26,20 +26,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
 function App() {
   const { theme } = useContext(ThemeContext);
 
@@ -59,4 +45,3 @@ function App() {
 }
 
 export default App;
-export { ThemeProvider };
