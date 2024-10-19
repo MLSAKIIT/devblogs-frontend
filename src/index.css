@@ -26,3 +26,14 @@
   border-color: rgba(255, 255, 255, 0.4);
   /* border-color: #151515; */
 }
+
+.ql-editor {
+  color: black;
+  background-color: white;
+}
+
+/* Apply dark mode styles */
+.dark .ql-editor {
+  color: white;
+  background-color: #374151; /* Adjust as needed for dark backgrounds */
+}
