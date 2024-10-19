@@ -29,7 +29,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={` px-10 py-20 rounded-3xl border-2 border-gray-200`}>
+    <div className={` px-10 py-10 mt-20 rounded-3xl border-2 border-gray-200`}>
       <h1 className="text-5xl font-semibold">Welcome to Dev Blogs!</h1>
       <p className="font-medium text-lg text-gray-500 mt-4">
         Please enter your Details
