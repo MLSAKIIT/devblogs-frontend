@@ -1,6 +1,8 @@
+import React from "react";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import RecentPosts from "../components/RecentPosts";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const Home = () => {
   const heroPosts = [
@@ -80,6 +82,7 @@ const Home = () => {
       <RecentPosts posts={blogPosts} />
 
       <Footer />
+      <ScrollToTopButton/>
     </div>
   );
 };

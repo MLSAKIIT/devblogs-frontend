@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const HeroSection = ({ posts, autoSlideInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

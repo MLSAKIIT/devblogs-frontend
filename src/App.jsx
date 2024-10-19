@@ -1,3 +1,4 @@
+import React from "react"; 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createContext, useContext, useEffect } from "react";
 import Home from "./pages/Home";
