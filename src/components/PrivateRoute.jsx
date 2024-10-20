@@ -1,3 +1,4 @@
+// Replace with actual auth logic
 import {Route,Navigate, Outlet} from 'react-router-dom'
 const PrivateRoute=({})=>{
     let auth={'token':false}
